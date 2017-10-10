@@ -1,0 +1,25 @@
+.App {
+  background-color: #d40062;
+  padding: 20px;
+}
+
+.FormWrapper {
+  width: 600px;
+  margin: auto;
+  background-color: white;
+  text-align: center;
+}
+
+#reactTitle {
+  font-size: 40px;
+  font-family: sans-serif;
+  color: #00bcd4;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+@media (max-width:600px)  {
+  .FormWrapper {
+    width: 100%;
+  }
+}

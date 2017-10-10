@@ -1,0 +1,50 @@
+#FormContainer {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+#updateButton {
+  background-color: #00bcd4;
+  width: 100%;
+  border: none;
+  height: 40px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: white;
+  border-radius: 4px;
+  font-size: 15px;
+  font-family: sans-serif;
+  outline:none;
+  position: relative;
+  text-align: center;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  text-decoration: none;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 5px 5px 10px #cecece;
+}
+
+#updateButton:after {
+    content: "";
+    background: #f44198;
+    display: block;
+    position: absolute;
+    padding-top: 300%;
+    padding-left: 350%;
+    margin-left: -20px!important;
+    margin-top: -120%;
+    opacity: 0;
+    transition: all 0.8s
+}
+
+#updateButton:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s
+}
+
+span {
+  color: white !important;
+}
