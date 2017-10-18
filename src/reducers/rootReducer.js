@@ -6,7 +6,14 @@ import {
 } from '../actions/actions';
 
 let initialState = {
-
+  user : {
+    username : "kaylajensen",
+    firstName : "Kayla",
+    lastName : "Jensen",
+    phone : "+15632715195",
+    workoutCount : 0,
+    allTimeWorkoutCount : 0
+  }
 }
 
 function updateUserInfo(state = initialState, action) {

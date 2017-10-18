@@ -8,7 +8,13 @@ export class Form extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      user: {}
+      user: {
+        username: "",
+        firstName: "",
+        lastName: "",
+        phone: "",
+        workoutCount: 0
+      }
     }
     this.handleChange = this.handleChange.bind(this)
     this.updateButtonClicked = this.updateButtonClicked.bind(this)
@@ -16,59 +22,46 @@ export class Form extends Component {
 
   updateButtonClicked() {
     Object.keys(this.state.user).forEach(function(key) {
+      console.log(key);
       this.props.dispatch(updateUserInfo(key, this.state.user[key]));
     }, this);
   }
 
   handleChange(event) {
     this.setState({
-      user : {
-        [event.target.id]: event.target.value
-      }
+        user: {
+          ...this.state.user,
+          [event.target.id]: event.target.value
+        }
     });
   }
 
   render() {
     return (
       <div id="FormContainer">
+        <Field  id="username"
+                title={this.state.user.username}
+                hintText="Username"
+                handleChange={this.handleChange} />
+
         <Field  id="firstName"
-                title={this.props.user.firstName}
+                title={this.state.user.firstName}
                 hintText="First Name"
                 handleChange={this.handleChange} />
 
         <Field  id="lastName"
-                title={this.props.user.lastName}
+                title={this.state.user.lastName}
                 hintText="Last Name"
                 handleChange={this.handleChange} />
 
-        <Field  id="address1"
-                title={this.props.user.address1}
-                hintText="Address 1"
-                handleChange={this.handleChange} />
-
-        <Field  id="address2"
-                title={this.props.user.address2}
-                hintText="Address 2"
-                handleChange={this.handleChange} />
-
-        <Field  id="city"
-                title={this.props.user.city}
-                hintText="City"
-                handleChange={this.handleChange} />
-
-        <Field  id="state"
-                title={this.props.user.state}
-                hintText="State"
-                handleChange={this.handleChange} />
-
         <Field  id="phone"
-                title={this.props.user.phone}
+                title={this.state.user.phone}
                 hintText="Phone Number"
                 handleChange={this.handleChange} />
 
-        <Field  id="email"
-                title={this.props.user.email}
-                hintText="Email"
+        <Field  id="workoutCount"
+                title={this.state.user.workoutCount}
+                hintText="How many times have you worked out today?"
                 handleChange={this.handleChange} />
 
         <button
